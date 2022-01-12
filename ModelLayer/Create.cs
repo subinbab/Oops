@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ModelLayer
 {
-    internal class Create
+    public class Create
     {
         [Key]
         public int id { get; set; }

@@ -10,9 +10,10 @@ namespace DbConnection
     public  class OpenConnection
     {
         private string _connectionString;
-        protected internal OpenConnection()
+        public OpenConnection()
         {
             _connectionString = "Data Source=(localdb)\\ProjectModels;Initial Catalog=WebApiVersion1;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            connect();
         }
         public OpenConnection(string ConnectionString)
         {
@@ -29,17 +30,24 @@ namespace DbConnection
         }
         public bool IsConnected()
         {
+            if (connect())
+                return true;
+            else
+                return false;
+        }
+        private bool connect()
+        {
             try
             {
                 SqlConnection connection = new SqlConnection(_connectionString);
                 connection.Open();
-                connection.Close();
                 return true;
             }
             catch
             {
                 return false;
             }
+            
         }
     }
 }
