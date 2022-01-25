@@ -12,7 +12,7 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-            OpenConnection db = new OpenConnection("Data Source=(localdb)\\ProjectsV13;Initial Catalog=MobizoneV1;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            OpenConnection db = new OpenConnection("Data Source=(localdb)\\ProjectModels;Initial Catalog=Mobizone1;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             db.TestDisplay("qwerty12345678");
             if (db.IsConnected())
             {
@@ -30,6 +30,7 @@ namespace ConsoleApp2
             cr.Lastname = "Babu";
             cr.Email = "subinbabu$127@gmail.com";
             cr.Password = "Subin@1999";
+            cr.Confirmpassword = "Subin@1999";
             dbtable.Display(cr);
         }
     }
